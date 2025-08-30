@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HexVerse — HexRun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <link rel="stylesheet" href="../../src/ui/theme.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Babylon -->
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+
+  <style>
+    html,body { margin:0; padding:0; width:100%; height:100%; background:var(--hx-bg); overflow:hidden; }
+    #renderCanvas { position:fixed; inset:0; width:100%; height:100%; display:block; outline:none; }
+    .hud {
+      position:fixed; top:10px; left:10px; z-index:10; color:#fff; 
+      font-family:'Orbitron', sans-serif; font-size:14px; letter-spacing:.4px;
+      text-shadow: 0 0 6px rgba(0,0,0,.7);
+      display:flex; gap:16px; align-items:center;
+    }
+    .hud .pill{ padding:6px 10px; border:1px solid rgba(255,255,255,.18); border-radius:10px; background:rgba(0,0,0,.25); }
+  </style>
+</head>
+<body>
+  <canvas id="renderCanvas"></canvas>
+
+  <!-- Basit HUD -->
+  <div class="hud">
+    <div class="pill"><span id="hudType">—</span></div>
+    <div class="pill">Time: <span id="hudTime">00:00</span></div>
+    <div class="pill">Spawned: <span id="hudSpawn">0</span></div>
+    <div class="pill">Hits: <span id="hudHits">0</span></div>
+  </div>
+
+  <script type="module" src="../../src/modes/hexrun/main.js"></script>
+</body>
+</html>
